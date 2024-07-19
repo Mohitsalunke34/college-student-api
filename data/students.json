@@ -1,0 +1,24 @@
+[
+    {
+      "id": 1,
+      "name": "John Doe",
+      "year": "Sophomore",
+      "degree": "Computer Science",
+      "skills": ["JavaScript", "React", "Node.js"]
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "year": "Senior",
+      "degree": "Information Technology",
+      "skills": ["Python", "Django", "Machine Learning"]
+    },
+    {
+      "id": 3,
+      "name": "Alice Johnson",
+      "year": "Junior",
+      "degree": "Software Engineering",
+      "skills": ["C++", "Java", "Algorithms"]
+    }
+  ]
+  
