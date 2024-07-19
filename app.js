@@ -10,7 +10,7 @@ let students = [
 ];
 
 app.get('/', (req, res) => {
-    res.send('Welcome to the College Student API!');
+    res.send('Welcome to the College Student API by Mohit just now!');
 });
 
 app.get('/students', (req, res) => {
