@@ -1,21 +1,25 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
-// Serve static files from the React app
-app.use(express.static(path.join(__dirname, 'client')));
+// Middleware to handle JSON bodies
+app.use(express.json());
 
-// API endpoint to get students
-app.get('/students', (req, res) => {
-  res.json(require('./data/students.json'));
+// Endpoint to serve your API data
+const students = require('./data/students.json');
+app.get('/api/students', (req, res) => {
+  res.json(students);
 });
 
-// All other requests serve the React app
+// Serve static files from the client folder
+app.use(express.static(path.join(__dirname, 'client')));
+
+// Handle client-side routing
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'client', 'index.html'));
 });
 
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
